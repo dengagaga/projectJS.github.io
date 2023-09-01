@@ -1,0 +1,530 @@
+* {
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+}
+body {
+    background: #f4f4f4;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+.none {
+    display: none;
+}
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 60px 15px;
+}
+
+.row {
+	display: flex;
+	justify-content: space-between;
+    gap: 30px;
+}
+
+.main {
+	max-width: 870px;
+}
+
+.sidebar {
+	min-width: 200px;
+	width: 270px;
+}
+.cards-holder {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+    gap: 30px;
+}
+.main + .sidebar {
+	margin-left: 30px;
+}
+.card {
+    background-color: #fff;
+    width: 270px;
+    position: relative;
+}
+a.card-link {
+	display: inline-block;
+	text-decoration: none;
+	transition: all 0.2s ease-in;
+}
+.card-link:hover {
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+.card-badges {
+    display: flex;
+    position: absolute;
+    gap: 10px;
+    right: 23px;
+    font-size: 14px;
+    top: 10px;
+}
+.card-bage-one {
+    background-color: #FFCF26;
+    padding: 3px 10px;
+    border-radius: 5px;
+    max-width: 80px;
+}
+.card-bage-two {
+    background-color: #11BE75;
+    padding: 3px 10px;
+    border-radius: 5px;
+    color: white;
+    max-width: 142px;
+}
+
+.card-content {
+    padding: 15px 15px 20px;
+}
+.card-title {
+    margin: 0;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    color: #000;
+}
+.card-tern {
+    font-size: 14px;
+    line-height: 16px;
+    color: #000;
+    margin-bottom: 10px;
+}
+.card-metro {
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px;
+    color: #000;
+
+}
+.card-metro::before {
+    content: "";
+    /* display: block; */
+    position: absolute;
+    left: 0;
+    top: 1px;
+    width: 16px;
+    height: 11px;
+    background-image: url(img/Moscow_Metro\ 1\ \(1\).svg);
+}
+.card-address {
+    line-height: 16px;
+    font-size: 14px;
+    color:#777777;
+}
+.card-btn {
+    width: 870px;
+    height: 80px;
+    background-color: #E5E5E5;
+    text-align: center;
+    vertical-align: center;
+    border-radius: 4px;
+    padding-top: 26px;
+    line-height: 21px;
+    padding-bottom: 30px;
+    font-size: 18px;
+    color: #4290C9;
+    border: none;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: all 0.2s;
+}
+.card-btn:hover {
+    opacity: 0.8;
+    background-color: #d4d4d4;
+}
+.img-btn {
+    vertical-align: bottom;
+    margin-right: 5px;
+}
+
+
+
+.widget {
+    margin-bottom: 30px;
+}
+.widget-title {
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: 700;
+    position: relative;
+    margin-bottom: 20px;
+}
+.widget-title::after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 0;
+    right: 0;
+    background-image: url(img/chevron-up.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.widget-body {
+
+}
+.widget-body--hidden {
+    display: none;
+}
+.location {
+}
+.location-row {
+    display: flex;
+}
+.location-row:first-child {
+    overflow: hidden;
+    border-radius: 4px 4px 0 0;
+    border: 1px solid #d6d6d6;
+}
+.location-row:last-child {
+    overflow: hidden;
+    border-radius: 0 0 4px 4px;
+    border: 1px solid #d6d6d6;
+    border-top: none;
+}
+.location-btn {
+    font-size: 14px;
+    line-height: 50px;
+    color: #3C3C3C;
+    border: none;
+    background-color: transparent;
+    text-align: center;
+    padding: 0 15px;
+    height: 50px;
+    font-weight: 500;
+    flex-grow: 1;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.location-checkbox {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    opacity: 0;
+    appearance: none;
+}
+.location-checkbox:checked + .location-btn{
+    background-color: #FFCF26;
+}
+.location-checkbox + .location-btn:hover {
+    background-color: #ffd02673;
+}
+.radio {
+    cursor: pointer;
+    
+}
+.radio-body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.radio-real {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    opacity: 0;
+    appearance: none;
+}
+.radio-real:checked +.radio-fake::before {
+    content: "";
+    top: 5px;
+    left: 5px;
+    width: 8px;
+    height: 8px;
+    background-color: black;
+    position: absolute;
+    border-radius: 50%;
+}
+
+
+.radio-fake {
+    vertical-align: top;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border: 1px solid #777777;
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+.radio-real:checked +.radio-fake {
+    background-color:#FFE074;
+}
+.radio-real:checked ~ .radio-title {
+    font-weight: 700;
+}
+.radio-title {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.checkbox {
+    cursor: pointer;
+}
+.checkbox-real {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    opacity: 0;
+    appearance: none;
+}
+.checkbox-fake {
+    vertical-align: top;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: 1px solid #777777;
+    display: inline-block;
+    border-radius: 2px;
+    margin-right: 5px;
+    
+}
+.checkbox-real:checked +.checkbox-fake {
+    background-color:#FFE074;
+}
+.checkbox-real:checked +.checkbox-fake::before {
+    position: absolute;
+    content: "";
+    width: 18px;
+    height: 18px;
+    top: 0;
+    left: 0;
+    background-image: url(img/check.svg);
+    background-position: center;
+}
+.checkbox-title {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+}
+.checkbox-real:checked ~ .checkbox-title {
+    font-weight: 700;
+}
+.link-shiw-more {
+    background: transparent;
+    display: inline-block;
+    border: none;
+    font-size: 16px;
+    line-height: 19px;
+    color: #4290C9;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: left;
+    padding: 0;
+    
+}
+.link-shiw-more:hover {
+    opacity: 0.7; 
+    text-decoration: underline;
+}
+
+.toogle {
+    cursor: pointer;
+}
+.toogle-real {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    opacity: 0;
+    appearance: none;
+    
+}
+.toogle-fake {
+    display: inline-block;
+    vertical-align: bottom;
+    margin-right: 5px;
+    background-color: #C4C4C4;
+    border-radius: 10px;
+    width: 37px;
+    height: 20px;
+    position: relative;
+    
+
+}
+.toogle-fake::after {
+    position: absolute; 
+    content: "";
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    background-color: #3C3C3C;
+    transition: all 0.4s;
+
+   
+}
+.toogle-real:checked + .toogle-fake {
+    background-color: #FFE074;
+}
+.toogle-real:checked + .toogle-fake::after {
+    left: 19px;
+}
+.toogle-title {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+}
+.toogle-real:checked ~ .toogle-title {
+    font-weight: 700;
+}
+
+
+.form-btn {
+    height: 50px;
+    background: transparent;
+    text-align: center;
+    border: 1px solid #D6D6D6;
+    border-radius: 4px;
+    width: 100%;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 19px;
+    color: #3C3C3C;
+    transition: all 0.4s;
+}
+.form-btn:hover {
+    background-color: #c4c4c475;
+}
+.form-btn--submit {
+    background: #FFCF26;
+    border: none;
+    color: #000;
+}
+.form-btn--submit:hover {
+    background: #e9b90ac9;
+}
+.form-btn--reset {
+   
+}
+.form-btn--reset img {
+    display: inline-block;
+    vertical-align: middle;
+    padding-bottom: 3px;
+} 
+.menu-icon-wrapper {
+    display: none;
+}
+
+.card-link--hidden {
+    display: none !important ;
+    
+}
+.widget-title--active::after {
+    transform:rotate(180deg);
+}
+
+@media  (max-width: 1130px) {
+    .row {
+        display: block;
+        
+    }
+    .cards-holder {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+    .card {
+        background-color: #fff;
+        width: 330px;
+        position: relative;
+    }
+    .card-img>img {
+        width: 100%;
+    }
+    
+}
+@media  (max-width: 1130px) {
+    .sidebar {
+       /* display: none; */
+       margin-right: 0 !important;
+       position: fixed;
+       top: 0;
+       right: 0;
+       bottom: 0;
+       background-color: #fff;
+       padding: 15px;
+       box-shadow: 0px 0px 20px 4px #0000005e ;
+       overflow-y: auto;
+       transform: translateX(120%);
+       transition: all 0.2s;
+    }
+    .sidebar--mobile-active {
+        transform: translateX(0%);
+    }
+    /* Burger Menu */
+
+
+
+    .toggle-sidebar {
+        position:fixed;
+        z-index: 9;
+        top: 15px;
+        left: 15px;
+        height: 30px;
+        width: 30px;
+        background-color: black;
+        cursor: pointer;
+        border: none;
+        padding: 0;
+    }
+    .menu-icon-wrapper {
+        width: 45px;
+        height: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .menu-icon {
+        position: relative;
+        width: 30px;
+        height: 5px;
+        background-color: #fff;
+    }
+    .menu-icon::before {
+        position: absolute;
+        left: 0;
+        top: -10px;
+        content: "";
+        width: 30px;
+        height: 5px;
+        background-color: #fff;
+        transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+    }
+    .menu-icon::after {
+        position: absolute;
+        left: 0;
+        top: 10px;
+        content: "";
+        width: 30px;
+        height: 5px;
+        background-color: #fff;
+        transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+    }
+    .menu-icon.menu-icon-active {
+        background-color: transparent;
+    }
+    .menu-icon.menu-icon-active::before {
+        transform: rotate(45deg);
+        top: 0;
+        transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+    }
+    .menu-icon.menu-icon-active::after {
+        transform: rotate(-45deg);
+        top: 0;
+        transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+    }
+
+    /* /Burger Menu */
+}
